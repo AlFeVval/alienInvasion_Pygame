@@ -5,25 +5,22 @@ class Ship():
     def __init__(self,ai_settings, screen):
         """ Initialize the ship and set its position """
         self.screen = screen
-        self.width = 50
-        self.height = 50
-        
         self.ai_settings = ai_settings
 
-        #Load the ship image and get its rect
+        # Load the ship image and get its rect
         og_img = pygame.image.load('sprites/ship.png')
-        self.image = pygame.transform.scale(og_img, (self.width, self.height))
+        self.image = pygame.transform.scale(og_img, (50, 20))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         
-        #Start new ship at the bottom center of the screen
+        # Start new ship at the bottom center of the screen
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
 
-        #Decimal value of center reference
+        # Decimal value of center reference
         self.center = float(self.rect.centerx)
 
-        #Movement flags
+        # Movement flags
         self.moving_right = False
         self.moving_left = False
 
